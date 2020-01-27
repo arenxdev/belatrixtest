@@ -124,7 +124,7 @@ public class JobLogger {
 
 1. Method names must not start in uppercase as `LogMessage`.
 
-2. The statement indicates that messages can be marked as type as message, warning or error. However, the static LogMessage method allows the message to be marked as more than one type; In this case you should receive only two parameters that are: the message and type of message.
+2. The statement indicates that messages can be marked as type as message, warning or error. Nevertheless, the static LogMessage method allows the message to be marked as more than one type; In this case you should receive only two parameters that are: the message and type of message.
 ![img](imgs/enum2.png)
 
 3. When starting the method it was intended to do `messageText.trim()` and then validate if the text is null or has a size of 0; this evidences the following inconveniences:
@@ -147,10 +147,10 @@ The type of the variable is marked as an `int` and in the only part in which it 
 
 8. Configuration variables and `LogMessage` method are declared as a `static`, this implies that those have a class behavior and not an instance behavior; the `static` variables are initialized from the constructor. In case there are several threads of execution or simply with generating a new `JobLogger` instance with a different configuration, the settings are going to will change for all.
 Here you can have two scenaries:
-   - **configuration will be global for the entire application**: in this case it is convenient that the variables and the method are static. However, the configuration should be fixed.
+   - **configuration will be global for the entire application**: in this case it is convenient that the variables and the method are static. Nevertheless, the configuration should be fixed.
    - **Configuration can be customized in any situation in which you want to use**: in this case, the variables and methods should not be static, thus, when making an instance of the class its behavior is described, and the instance will be used to access to `LogMessage` method.
 
-9. In general, some variables do not describe the information they can store, so the person who must edit the code will take longer to understand; for example: `dbParams` variable should have only database parameters; however, it includes the log directory path. Also, it is necessary to fragment the code into specific logic for `log to console`, `log to file`, `log to database`; because the logic is all in the same method and without any order.
+9. In general, some variables do not describe the information they can store, so the person who must edit the code will take longer to understand; for example: `dbParams` variable should have only database parameters. Nevertheless, it includes the log directory path. Also, it is necessary to fragment the code into specific logic for `log to console`, `log to file`, `log to database`; because the logic is all in the same method and without any order.
 
 ## JUNIT TEST
 
