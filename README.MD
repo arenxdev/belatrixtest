@@ -151,3 +151,13 @@ Here you can have two scenaries:
    - **Configuration can be customized in any situation in which you want to use**: in this case, the variables and methods should not be static, thus, when making an instance of the class its behavior is described, and the instance will be used to access to `LogMessage` method.
 
 9. In general, some variables do not describe the information they can store, so the person who must edit the code will take longer to understand; for example: `dbParams` variable should have only database parameters; however, it includes the log directory path. Also, it is necessary to fragment the code into specific logic for `log to console`, `log to file`, `log to database`; because the logic is all in the same method and without any order.
+
+## JUNIT TEST
+
+To launch the application test's run:
+
+> mvn clean test
+
+Here the results:
+
+![img](imgs/result.png)
