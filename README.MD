@@ -154,7 +154,7 @@ Here you can have two scenaries:
 
 ## JUNIT TEST
 
-To launch the application test's run:
+To launch the application's test run:
 
 > mvn clean test
 
